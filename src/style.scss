@@ -1,0 +1,251 @@
+/**
+ * Luiz0067 PDF Flipbook - Styles
+ * Compatível com Bootstrap 5 e Font Awesome 6
+ */
+
+.luiz0067-pdf-flipbook-block {
+	display: block;
+	width: 100%;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.luiz0067-flipbook-container {
+	border-radius: 12px;
+	overflow: hidden;
+	background: #0f172a;
+	box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.4), 0 10px 15px -5px rgba(0, 0, 0, 0.2);
+	transition: all 0.3s ease;
+
+	&:fullscreen,
+	&:-webkit-full-screen,
+	&:-moz-full-screen,
+	&:-ms-fullscreen {
+		width: 100vw !important;
+		height: 100vh !important;
+		border-radius: 0 !important;
+		display: flex;
+		flex-direction: column;
+
+		.luiz0067-flipbook-viewport {
+			flex: 1 1 auto;
+			height: calc(100vh - 54px) !important;
+		}
+	}
+}
+
+.luiz0067-flipbook-viewport {
+	position: relative;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	perspective: 2500px;
+	user-select: none;
+	overflow: hidden;
+}
+
+.luiz0067-flipbook-stage {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	box-sizing: border-box;
+}
+
+/* 3D Book Layout */
+.luiz0067-3d-book {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-height: 90%;
+	max-width: 92%;
+	transform-style: preserve-3d;
+	transition: transform 0.25s cubic-bezier(0.2, 0, 0.2, 1);
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.55);
+
+	&.double-page {
+		display: flex;
+		flex-direction: row;
+		background: #ffffff;
+		border-radius: 4px;
+	}
+
+	&.single-page {
+		display: flex;
+		background: #ffffff;
+		border-radius: 4px;
+	}
+}
+
+/* Leaves (Pages) */
+.luiz0067-leaf {
+	position: relative;
+	background: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	height: 100%;
+	min-width: 280px;
+	max-height: 80vh;
+	cursor: pointer;
+	transform-origin: center left;
+	transition: filter 0.2s ease;
+
+	&.leaf-left {
+		transform-origin: right center;
+		border-radius: 4px 0 0 4px;
+		box-shadow: inset -15px 0 25px -10px rgba(0, 0, 0, 0.18);
+	}
+
+	&.leaf-right {
+		transform-origin: left center;
+		border-radius: 0 4px 4px 0;
+		box-shadow: inset 15px 0 25px -10px rgba(0, 0, 0, 0.18);
+	}
+
+	&.leaf-single {
+		border-radius: 6px;
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+	}
+
+	&.leaf-empty {
+		background: #1e293b;
+		cursor: default;
+	}
+
+	&:hover:not(.leaf-empty) {
+		filter: brightness(1.02);
+	}
+}
+
+/* Spine Shadow */
+.luiz0067-spine {
+	width: 14px;
+	align-self: stretch;
+	background: linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0.35) 0%,
+		rgba(0, 0, 0, 0.15) 35%,
+		rgba(255, 255, 255, 0.2) 50%,
+		rgba(0, 0, 0, 0.15) 65%,
+		rgba(0, 0, 0, 0.35) 100%
+	);
+	z-index: 2;
+}
+
+/* Page Content */
+.luiz0067-page-sheet {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.luiz0067-page-canvas {
+	max-height: 100%;
+	max-width: 100%;
+	display: block;
+	object-fit: contain;
+}
+
+.luiz0067-page-img {
+	max-height: 100%;
+	max-width: 100%;
+	display: block;
+	object-fit: contain;
+}
+
+/* 3D Animations */
+@keyframes flipNextLeaf {
+	0% {
+		transform: rotateY(0deg);
+		filter: brightness(1);
+	}
+	50% {
+		filter: brightness(0.85);
+	}
+	100% {
+		transform: rotateY(-30deg);
+		filter: brightness(1);
+	}
+}
+
+@keyframes flipPrevLeaf {
+	0% {
+		transform: rotateY(0deg);
+		filter: brightness(1);
+	}
+	50% {
+		filter: brightness(0.85);
+	}
+	100% {
+		transform: rotateY(30deg);
+		filter: brightness(1);
+	}
+}
+
+.flip-anim-next {
+	animation: flipNextLeaf 0.45s ease-out;
+}
+
+.flip-anim-prev {
+	animation: flipPrevLeaf 0.45s ease-out;
+}
+
+/* Toolbar */
+.luiz0067-flipbook-toolbar {
+	user-select: none;
+	background: #111827 !important;
+	z-index: 10;
+	gap: 8px;
+
+	.btn {
+		transition: all 0.2s ease;
+		border-radius: 6px;
+
+		&:hover {
+			transform: translateY(-1px);
+		}
+	}
+
+	.luiz0067-btn-sound.active {
+		border-color: #0dcaf0;
+	}
+
+	.luiz0067-input-page {
+		font-weight: 600;
+		color: #ffffff;
+		background: #1f2937;
+		border: 1px solid #374151;
+		border-radius: 4px;
+
+		&:focus {
+			outline: none;
+			border-color: #0d6efd;
+			box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+		}
+	}
+}
+
+/* Responsividade Mobile */
+@media (max-width: 767.98px) {
+	.luiz0067-flipbook-stage {
+		padding: 12px;
+	}
+
+	.luiz0067-leaf {
+		min-width: 220px;
+	}
+
+	.luiz0067-flipbook-toolbar {
+		flex-wrap: wrap;
+		justify-content: center !important;
+		gap: 6px;
+	}
+}

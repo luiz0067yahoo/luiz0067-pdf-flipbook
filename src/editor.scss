@@ -1,0 +1,118 @@
+/**
+ * Luiz0067 PDF Flipbook - Editor Styles
+ * Estilos exclusivos para o editor do Gutenberg e InspectorControls
+ */
+
+.luiz0067-flipbook-inspector-header {
+	background: #f8fafc;
+}
+
+.luiz0067-flipbook-tabs {
+	.components-tab-panel__tabs {
+		display: flex;
+		border-bottom: 1px solid #e2e8f0;
+		background: #f1f5f9;
+		padding: 4px 4px 0 4px;
+		gap: 4px;
+
+		button {
+			flex: 1;
+			font-size: 11.5px;
+			font-weight: 600;
+			padding: 8px 4px;
+			text-align: center;
+			color: #64748b;
+			border: none;
+			border-radius: 6px 6px 0 0;
+			background: transparent;
+			cursor: pointer;
+			transition: all 0.2s ease;
+
+			&.active-tab {
+				color: #0f172a;
+				background: #ffffff;
+				box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.04);
+				border-bottom: 2px solid #0d6efd;
+			}
+
+			&:hover:not(.active-tab) {
+				color: #334155;
+				background: #e2e8f0;
+			}
+		}
+	}
+}
+
+.luiz0067-source-pdf-section {
+	.card {
+		background: #ffffff;
+		border-radius: 8px;
+	}
+}
+
+/* Editor Canvas Mock Book WYSIWYG */
+.luiz0067-flipbook-placeholder {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-size: cover;
+	background-position: center;
+
+	.placeholder-content-box {
+		backdrop-filter: blur(8px);
+	}
+}
+
+.luiz0067-mock-book {
+	position: relative;
+	border-radius: 6px;
+	overflow: hidden;
+	background: #ffffff;
+	box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+	max-height: 85%;
+	max-width: 90%;
+
+	.mock-spread {
+		display: flex;
+		align-items: stretch;
+	}
+
+	.mock-page {
+		width: 320px;
+		min-height: 440px;
+		box-sizing: border-box;
+
+		&.left-page {
+			border-right: 1px solid #f1f5f9;
+			box-shadow: inset -15px 0 20px -10px rgba(0, 0, 0, 0.08);
+		}
+
+		&.right-page {
+			border-left: 1px solid #f1f5f9;
+			box-shadow: inset 15px 0 20px -10px rgba(0, 0, 0, 0.08);
+		}
+
+		&.single-page {
+			width: 380px;
+			min-height: 480px;
+		}
+	}
+
+	.mock-spine {
+		width: 12px;
+		align-self: stretch;
+		background: linear-gradient(
+			to right,
+			rgba(0, 0, 0, 0.3) 0%,
+			rgba(0, 0, 0, 0.1) 35%,
+			rgba(255, 255, 255, 0.25) 50%,
+			rgba(0, 0, 0, 0.1) 65%,
+			rgba(0, 0, 0, 0.3) 100%
+		);
+	}
+}
+
+.luiz0067-editor-badge {
+	z-index: 15;
+	backdrop-filter: blur(4px);
+}

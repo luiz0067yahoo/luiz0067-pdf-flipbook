@@ -1,0 +1,35 @@
+{
+  "name": "luiz0067-pdf-flipbook",
+  "version": "1.0.0",
+  "description": "WordPress Gutenberg Block plugin for interactive 3D PDF flipbooks and digital magazines with Bootstrap 5 and Font Awesome 6.",
+  "author": "Luiz Fernando Brogliatto Ferreira",
+  "license": "GPL-2.0-or-later",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "plugin-zip": "wp-scripts plugin-zip"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luiz0067yahoo/luiz0067-pdf-flipbook.git"
+  },
+  "keywords": [
+    "wordpress",
+    "gutenberg",
+    "block",
+    "pdf",
+    "flipbook",
+    "magazine",
+    "catalog",
+    "bootstrap5",
+    "fontawesome"
+  ],
+  "bugs": {
+    "url": "https://github.com/luiz0067yahoo/luiz0067-pdf-flipbook/issues"
+  },
+  "homepage": "https://github.com/luiz0067yahoo/luiz0067-pdf-flipbook#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^35.0.0"
+  }
+}

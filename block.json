@@ -1,0 +1,96 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "luiz0067/pdf-flipbook",
+  "version": "1.0.0",
+  "title": "Luiz0067 PDF Flipbook",
+  "category": "media",
+  "icon": "book-alt",
+  "description": "Leitor interativo de PDF e revistas em formato flipbook 3D realista com suporte a Bootstrap 5 e Font Awesome 6.",
+  "keywords": [
+    "pdf",
+    "flipbook",
+    "revista",
+    "catalogo",
+    "livro"
+  ],
+  "textdomain": "luiz0067-pdf-flipbook",
+  "attributes": {
+    "sourceType": {
+      "type": "string",
+      "default": "pdf"
+    },
+    "pdfUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "pdfTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "pdfSize": {
+      "type": "string",
+      "default": ""
+    },
+    "pageImages": {
+      "type": "array",
+      "default": []
+    },
+    "bookHeight": {
+      "type": "string",
+      "default": "650px"
+    },
+    "displayMode": {
+      "type": "string",
+      "default": "double-page"
+    },
+    "autoSinglePageOnMobile": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableDownload": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableFullscreen": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableSound": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableZoom": {
+      "type": "boolean",
+      "default": true
+    },
+    "themeColor": {
+      "type": "string",
+      "default": "#0d6efd"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#1e293b"
+    },
+    "startPage": {
+      "type": "number",
+      "default": 1
+    }
+  },
+  "supports": {
+    "align": ["wide", "full"],
+    "html": false,
+    "color": {
+      "background": false,
+      "text": false
+    },
+    "spacing": {
+      "margin": true,
+      "padding": false
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css",
+  "viewScript": "file:./build/view.js"
+}
