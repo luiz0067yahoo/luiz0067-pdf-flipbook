@@ -40,6 +40,8 @@
       "Ativar Modo Tela Cheia": [ "Enable Fullscreen Mode" ],
       "Efeito Sonoro de Papel Folheando": [ "Paper Page Turning Sound Effect" ],
       "Controles de Zoom (+ / -)": [ "Zoom Controls (+ / -)" ],
+      "Reprodução Automática (Autoplay)": [ "Automatic Playback (Autoplay)" ],
+      "Intervalo do Autoplay (segundos)": [ "Autoplay Interval (seconds)" ],
       "Cor de Destaque / Botões": [ "Highlight / Button Color" ],
       "Página": [ "Page" ],
       "de": [ "of" ],

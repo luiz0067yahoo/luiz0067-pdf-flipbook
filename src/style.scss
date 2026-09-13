@@ -249,3 +249,57 @@
 		gap: 6px;
 	}
 }
+
+/* Turn.js Magazine & Page Styling */
+.luiz0067-magazine {
+	position: relative;
+	margin: 0 auto;
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+	transition: margin-left 0.25s ease;
+
+	.page {
+		background-color: #ffffff;
+		overflow: hidden;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+		canvas,
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			display: block;
+			user-select: none;
+			-webkit-user-drag: none;
+		}
+
+		&.even {
+			background: -webkit-gradient(linear, left top, right top, color-stop(0.95, #ffffff), color-stop(1, #dadada));
+			background-image: -webkit-linear-gradient(left, #ffffff 95%, #dadada 100%);
+			background-image: -moz-linear-gradient(left, #ffffff 95%, #dadada 100%);
+			background-image: -ms-linear-gradient(left, #ffffff 95%, #dadada 100%);
+			background-image: linear-gradient(to right, #ffffff 95%, #dadada 100%);
+		}
+
+		&.odd {
+			background: -webkit-gradient(linear, right top, left top, color-stop(0.95, #ffffff), color-stop(1, #cacaca));
+			background-image: -webkit-linear-gradient(right, #ffffff 95%, #cacaca 100%);
+			background-image: -moz-linear-gradient(right, #ffffff 95%, #cacaca 100%);
+			background-image: -ms-linear-gradient(right, #ffffff 95%, #cacaca 100%);
+			background-image: linear-gradient(to left, #ffffff 95%, #cacaca 100%);
+		}
+	}
+
+	.page-wrapper {
+		perspective: 2000px;
+	}
+
+	.hard {
+		background: #ffffff;
+		box-shadow: none;
+	}
+
+	.shadow {
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+	}
+}
+

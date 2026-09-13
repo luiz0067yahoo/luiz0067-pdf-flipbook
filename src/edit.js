@@ -65,6 +65,8 @@ export default function Edit( { attributes, setAttributes } ) {
 		themeColor,
 		backgroundColor,
 		startPage,
+		enableAutoplay,
+		autoplayInterval,
 	} = attributes;
 
 	const [ previewPage, setPreviewPage ] = useState( startPage || 1 );
@@ -356,6 +358,24 @@ export default function Edit( { attributes, setAttributes } ) {
 											onChange={ ( value ) => setAttributes( { enableZoom: value } ) }
 											help={ __( 'Permite aproximar e afastar a visualização das páginas.', 'luiz0067-pdf-flipbook' ) }
 										/>
+
+										<ToggleControl
+											label={ __( 'Reprodução Automática (Autoplay)', 'luiz0067-pdf-flipbook' ) }
+											checked={ enableAutoplay }
+											onChange={ ( value ) => setAttributes( { enableAutoplay: value } ) }
+											help={ __( 'Avança as páginas automaticamente em intervalos regulares (como no catálogo interativo).', 'luiz0067-pdf-flipbook' ) }
+										/>
+
+										{ enableAutoplay && (
+											<RangeControl
+												label={ __( 'Intervalo do Autoplay (segundos)', 'luiz0067-pdf-flipbook' ) }
+												value={ autoplayInterval || 5 }
+												onChange={ ( value ) => setAttributes( { autoplayInterval: value } ) }
+												min={ 2 }
+												max={ 20 }
+												step={ 1 }
+											/>
+										) }
 									</div>
 
 									<div className="mt-4 pt-3 border-top">

@@ -88,6 +88,18 @@ add_action( 'enqueue_block_assets', 'luiz0067_pdf_flipbook_enqueue_shared_assets
  */
 function luiz0067_pdf_flipbook_enqueue_frontend_scripts() {
 	if ( ! is_admin() ) {
+		// jQuery nativo do WordPress
+		wp_enqueue_script( 'jquery' );
+
+		// Turn.js v4.1.0 oficial (mesmo motor utilizado no catálogo luiz0067yahoo)
+		wp_enqueue_script(
+			'luiz0067-turnjs',
+			LUIZ0067_PDF_FLIPBOOK_URL . 'assets/js/turn.min.js',
+			array( 'jquery' ),
+			'4.1.0',
+			true
+		);
+
 		// Mozilla PDF.js v3.11.174
 		wp_enqueue_script(
 			'pdfjs-dist',

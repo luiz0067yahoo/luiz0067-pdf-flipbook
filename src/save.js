@@ -16,6 +16,8 @@ export default function save( { attributes } ) {
 		themeColor,
 		backgroundColor,
 		startPage,
+		enableAutoplay,
+		autoplayInterval,
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
@@ -38,6 +40,8 @@ export default function save( { attributes } ) {
 				data-enable-fullscreen={ enableFullscreen ? 'true' : 'false' }
 				data-enable-sound={ enableSound ? 'true' : 'false' }
 				data-enable-zoom={ enableZoom ? 'true' : 'false' }
+				data-enable-autoplay={ enableAutoplay ? 'true' : 'false' }
+				data-autoplay-interval={ autoplayInterval || 5 }
 				data-theme-color={ themeColor || '#0d6efd' }
 				data-background-color={ backgroundColor || '#1e293b' }
 				data-start-page={ startPage || 1 }

@@ -75,6 +75,14 @@
     "startPage": {
       "type": "number",
       "default": 1
+    },
+    "enableAutoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "autoplayInterval": {
+      "type": "number",
+      "default": 5
     }
   },
   "supports": {

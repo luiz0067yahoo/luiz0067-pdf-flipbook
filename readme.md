@@ -88,6 +88,7 @@ Configure os recursos disponíveis na barra de navegação inferior do leitor.
 | **Modo Tela Cheia** | `ToggleControl` | Ativa o botão `fa-expand` conectado à Fullscreen API nativa do navegador para imersão total. |
 | **Efeito Sonoro de Papel** | `ToggleControl` | Habilita o sintetizador acústico da Web Audio API e o botão de silenciar/ativar som na barra (`fa-volume-high` / `fa-volume-xmark`). |
 | **Controles de Zoom** | `ToggleControl` | Ativa os botões de aumentar zoom (`fa-magnifying-glass-plus`), diminuir zoom (`fa-magnifying-glass-minus`) e reiniciar para 100%. |
+| **Reprodução Automática (Autoplay)** | `ToggleControl` / `RangeControl` | Avança as páginas automaticamente em intervalos regulares (inspirado no catálogo de `luiz0067yahoo.github.io/luiz0067yahoo/`), com pausa imediata ao clicar no livro. |
 | **Cor de Destaque / Botões** | `ColorPalette` | Personaliza a linha de topo da barra inferior e os botões de ação com a identidade visual do site (Azul Bootstrap, Roxo, Verde, Vermelho, etc.). |
 
 ---
